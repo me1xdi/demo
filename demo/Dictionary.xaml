@@ -22,18 +22,24 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
+    <Style x:Key="MainTBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+    </Style>
 
     <Style x:Key="MainTextBox" TargetType="TextBox">
         <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Width" Value="50"/>
-        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
 
     <Style x:Key="MainCB" TargetType="ComboBox">
         <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Width" Value="50"/>
-        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
 

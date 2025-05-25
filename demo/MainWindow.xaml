@@ -5,15 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Icon="/Resources/Мастер_пол.png" Closing="Window_Closing">
+        Title="MainWindow" Height="450" Width="800" Icon="/Resources/Мастер_пол.png" Closing="Window_Closing" MinWidth="800" MinHeight="450">
+
     <Grid Style="{StaticResource ScdGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="65*"/>
             <RowDefinition Height="358*"/>
         </Grid.RowDefinitions>
+
         <Frame x:Name="MainFrame" Source="/Pgs/PartnersPage.xaml"  Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"  />
         <Button x:Name="btBack" Style="{StaticResource MainBtn}"  Content="Назад" Margin="10,18,685,17" Height="Auto" Width="Auto" Click="btBack_Click"  />
         <Image Source="/Resources/Мастер_пол.png" HorizontalAlignment="Right" Height="50" VerticalAlignment="Center" Width="50" Margin="0,8,18,7"/>
 
     </Grid>
+
+
 </Window>

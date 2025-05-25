@@ -9,6 +9,44 @@
       Title="Партнеры">
 
     <Grid Style="{StaticResource MainGrid}">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ListView x:Name="ListViewPartners" Grid.Column="0" ItemsSource="{Binding partn}" MouseDoubleClick="ListViewPartners_MouseDoubleClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Gray" Margin="5" Padding="10" Width="450" >
+                        <StackPanel >
+                            <DockPanel>
+                                <TextBlock HorizontalAlignment="Left" >
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} | {1}">
+                                            <Binding Path="partner.PartnersType.Type"/>
+                                            <Binding Path="partner.Name"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Text="{Binding discount}" HorizontalAlignment="Right"/>
+                            </DockPanel>
+                            <TextBlock Text="{Binding partner.Director}" HorizontalAlignment="Left"/>
+                            <TextBlock Text="{Binding partner.PhoneNumber}" HorizontalAlignment="Left"/>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="Рейтинг: {0}">
+                                        <Binding Path="partner.Rating"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+        <Button x:Name="btAdd" Content="Добавть" Style="{StaticResource MainBtn}" Grid.Column="1" HorizontalAlignment="Left" Margin="140,400,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click"/>
+
     </Grid>
 </Page>

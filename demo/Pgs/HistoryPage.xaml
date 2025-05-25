@@ -1,0 +1,29 @@
+﻿<Page x:Class="demo.Pgs.HistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:demo.Pgs"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HistoryPage">
+
+    <Grid Style="{StaticResource MainGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="79*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="tBlPart" Text="{Binding Partners.Name}"/>
+        </StackPanel>
+        <DataGrid x:Name="DataGridHistory" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Продукция" Width="Auto" Binding="{Binding Products.Name}"/>
+                <DataGridTextColumn Header="Количество" Width="Auto" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Дата продажи" Width="Auto" Binding="{Binding Date}"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Page>
